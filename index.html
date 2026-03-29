@@ -16,9 +16,16 @@
   .container { max-width: 960px; margin: 0 auto; }
   .header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 16px;
     margin-bottom: 28px;
+  }
+  .header-main {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
   }
   .avatar {
     width: 64px; height: 64px;
@@ -41,6 +48,34 @@
     margin-bottom: 6px;
   }
   .panel h2 + .panel-copy { margin-top: 0; }
+  .refresh-btn {
+    appearance: none;
+    border: 1px solid #30363d;
+    background: linear-gradient(180deg, #21262d 0%, #161b22 100%);
+    color: #e6edf3;
+    border-radius: 999px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 120ms ease, transform 120ms ease, background 120ms ease;
+    white-space: nowrap;
+  }
+  .refresh-btn:hover {
+    border-color: #58a6ff;
+    background: linear-gradient(180deg, #263040 0%, #1a2230 100%);
+  }
+  .refresh-btn:active {
+    transform: translateY(1px);
+  }
+  .refresh-note {
+    color: #6e7681;
+    font-size: 11px;
+    margin-top: 8px;
+    text-align: right;
+    max-width: 220px;
+    line-height: 1.4;
+  }
   .panel-copy {
     color: #8b949e;
     font-size: 13px;
@@ -213,11 +248,17 @@
 <body>
 <div class="container">
   <div class="header">
-    <img class="avatar" src="https://avatars.githubusercontent.com/u/6186222?u=bfdac3cc6b9328dd4ab2a3552dd116abe16f2373&v=4" alt="langerjed">
-    <div class="header-info">
-      <h1>Jed Langer</h1>
-      <p>@langerjed &middot; I vibe coding</p>
-      <div class="sync-status" id="sync-status"></div>
+    <div class="header-main">
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/6186222?u=bfdac3cc6b9328dd4ab2a3552dd116abe16f2373&v=4" alt="langerjed">
+      <div class="header-info">
+        <h1>Jed Langer</h1>
+        <p>@langerjed &middot; I vibe coding</p>
+        <div class="sync-status" id="sync-status"></div>
+      </div>
+    </div>
+    <div>
+      <button class="refresh-btn" id="refresh-btn" type="button">Refresh View</button>
+      <div class="refresh-note">Reloads this saved snapshot. For a full GitHub re-sync, run <code>open.sh</code>.</div>
     </div>
   </div>
   <div id="summary"></div>
@@ -236,7 +277,7 @@
 <script>
 const DATA = {
   "username": "langerjed",
-  "syncedAt": "2026-03-29T15:11:45.323Z",
+  "syncedAt": "2026-03-29T16:13:32.213Z",
   "aggregate": {
     "scope": "token",
     "note": "Broader rollup includes repositories and contribution data visible to your token, including private repos when your token and GitHub profile settings allow it.",
@@ -248,10 +289,32 @@ const DATA = {
       "totalForks": 0,
       "recent": [
         {
+          "name": "langerjed/general-web-buddy-insights",
+          "url": "https://github.com/langerjed/general-web-buddy-insights",
+          "description": "",
+          "pushedAt": "2026-03-29T16:10:08Z",
+          "stars": 0,
+          "forks": 0,
+          "language": "Python",
+          "visibility": "private",
+          "defaultBranch": "main"
+        },
+        {
+          "name": "langerjed/web-buddy-website",
+          "url": "https://github.com/langerjed/web-buddy-website",
+          "description": "Web Buddy landing page",
+          "pushedAt": "2026-03-29T15:29:42Z",
+          "stars": 0,
+          "forks": 0,
+          "language": "HTML",
+          "visibility": "private",
+          "defaultBranch": "main"
+        },
+        {
           "name": "langerjed/git_hub_heat_map",
           "url": "https://github.com/langerjed/git_hub_heat_map",
           "description": "",
-          "pushedAt": "2026-03-29T14:55:27Z",
+          "pushedAt": "2026-03-29T15:12:57Z",
           "stars": 0,
           "forks": 0,
           "language": "HTML",
@@ -281,28 +344,6 @@ const DATA = {
           "defaultBranch": "main"
         },
         {
-          "name": "langerjed/general-web-buddy-insights",
-          "url": "https://github.com/langerjed/general-web-buddy-insights",
-          "description": "",
-          "pushedAt": "2026-03-29T14:41:57Z",
-          "stars": 0,
-          "forks": 0,
-          "language": "Python",
-          "visibility": "private",
-          "defaultBranch": "main"
-        },
-        {
-          "name": "langerjed/web-buddy-website",
-          "url": "https://github.com/langerjed/web-buddy-website",
-          "description": "Web Buddy landing page",
-          "pushedAt": "2026-03-29T06:46:50Z",
-          "stars": 0,
-          "forks": 0,
-          "language": "HTML",
-          "visibility": "private",
-          "defaultBranch": "main"
-        },
-        {
           "name": "langerjed/The-holocron",
           "url": "https://github.com/langerjed/The-holocron",
           "description": "",
@@ -323,19 +364,56 @@ const DATA = {
       "opened": 0
     },
     "events": {
-      "totalPublicEvents": 2,
-      "publicPushEvents": 0,
+      "totalPublicEvents": 3,
+      "publicPushEvents": 1,
       "publicPushCommits": 0,
       "reposTouched": 2,
-      "recentPushes": [],
+      "recentPushes": [
+        {
+          "repo": "langerjed/git_hub_heat_map",
+          "url": "https://github.com/langerjed/git_hub_heat_map",
+          "createdAt": "2026-03-29T15:12:57Z",
+          "commits": 0,
+          "branch": "main"
+        }
+      ],
       "byType": {
+        "PushEvent": 1,
         "CreateEvent": 2
       },
       "note": "Recent activity is based on the public events feed and is limited by GitHub to the latest public events."
     },
     "recentCommits": {
-      "totalRecentCommits": 40,
+      "totalRecentCommits": 42,
       "commits": [
+        {
+          "repo": "langerjed/general-web-buddy-insights",
+          "url": "https://github.com/langerjed/general-web-buddy-insights/commit/6ff01d1642cb0a00eacb90c4a82f8f7b8b687193",
+          "message": "Replace Streamlit workflow with Next.js Neon insights app",
+          "committedAt": "2026-03-29T16:10:01Z",
+          "sha": "6ff01d1"
+        },
+        {
+          "repo": "langerjed/web-buddy-website",
+          "url": "https://github.com/langerjed/web-buddy-website/commit/71ecbd9e0b673353e9dc2f62e0a4314a8eea6bc8",
+          "message": "Refine custom support messaging",
+          "committedAt": "2026-03-29T15:29:37Z",
+          "sha": "71ecbd9"
+        },
+        {
+          "repo": "langerjed/web-buddy-website",
+          "url": "https://github.com/langerjed/web-buddy-website/commit/9f65f78b5176af9524791e6458b29eff8809bf81",
+          "message": "Add shared Neon logging and support offer section",
+          "committedAt": "2026-03-29T15:25:58Z",
+          "sha": "9f65f78"
+        },
+        {
+          "repo": "langerjed/git_hub_heat_map",
+          "url": "https://github.com/langerjed/git_hub_heat_map/commit/fa3171c98b2543ba5e500e5ca3227debbb6ee179",
+          "message": "Upgrade dashboard to all-repo activity heatmap",
+          "committedAt": "2026-03-29T15:12:51Z",
+          "sha": "fa3171c"
+        },
         {
           "repo": "langerjed/git_hub_heat_map",
           "url": "https://github.com/langerjed/git_hub_heat_map/commit/f7c6f3cde8ab9dba97040f86885a450142c3a8d0",
@@ -391,34 +469,6 @@ const DATA = {
           "message": "Add shared WebBuddy database support",
           "committedAt": "2026-03-29T14:33:09Z",
           "sha": "c455ee2"
-        },
-        {
-          "repo": "langerjed/jedai-website",
-          "url": "https://github.com/langerjed/jedai-website/commit/49e1c34d34a542224a84596dcdeb72d321fe0fb8",
-          "message": "Add Neon conversation logging for buddy and agents",
-          "committedAt": "2026-03-29T14:19:36Z",
-          "sha": "49e1c34"
-        },
-        {
-          "repo": "langerjed/jedai-website",
-          "url": "https://github.com/langerjed/jedai-website/commit/028bd3eb2dd5a042f0ac9304c98ef6b004c3e5d6",
-          "message": "Refine Holocron category organization",
-          "committedAt": "2026-03-29T07:40:42Z",
-          "sha": "028bd3e"
-        },
-        {
-          "repo": "langerjed/jedai-website",
-          "url": "https://github.com/langerjed/jedai-website/commit/3fd53cb349f0d0a511fd8d4c0c5d221594373664",
-          "message": "Prefer NASA links for APOD responses",
-          "committedAt": "2026-03-29T07:33:07Z",
-          "sha": "3fd53cb"
-        },
-        {
-          "repo": "langerjed/jedai-website",
-          "url": "https://github.com/langerjed/jedai-website/commit/e28d1055621472aa055cf246bbff98eabcfe5c2d",
-          "message": "Adjust social preview headline",
-          "committedAt": "2026-03-29T07:16:55Z",
-          "sha": "e28d105"
         }
       ],
       "note": "Recent commits are pulled directly from your repositories over the last 14 days."
@@ -445,7 +495,7 @@ const DATA = {
       "earliestRestrictedDate": null,
       "latestRestrictedDate": null,
       "totals": {
-        "commits": 149,
+        "commits": 153,
         "issues": 0,
         "pullRequests": 0,
         "reviews": 0,
@@ -487,7 +537,7 @@ const DATA = {
         {
           "name": "langerjed/web-buddy-website",
           "url": "https://github.com/langerjed/web-buddy-website",
-          "commits": 14,
+          "commits": 16,
           "visibility": "private",
           "stars": 0,
           "language": "HTML"
@@ -495,7 +545,7 @@ const DATA = {
         {
           "name": "langerjed/general-web-buddy-insights",
           "url": "https://github.com/langerjed/general-web-buddy-insights",
-          "commits": 8,
+          "commits": 9,
           "visibility": "private",
           "stars": 0,
           "language": "Python"
@@ -2384,7 +2434,7 @@ const DATA = {
       ]
     },
     "2026": {
-      "totalContributions": 7,
+      "totalContributions": 8,
       "days": [
         {
           "date": "2026-01-01",
@@ -2823,7 +2873,7 @@ const DATA = {
         },
         {
           "date": "2026-03-29",
-          "contributionCount": 2,
+          "contributionCount": 3,
           "contributionLevel": "FOURTH_QUARTILE"
         },
         {
@@ -6046,7 +6096,7 @@ const DATA = {
       ]
     },
     "2026": {
-      "totalContributions": 128,
+      "totalContributions": 132,
       "days": [
         {
           "date": "2026-01-01",
@@ -6281,7 +6331,7 @@ const DATA = {
         {
           "date": "2026-02-16",
           "contributionCount": 19,
-          "contributionLevel": "THIRD_QUARTILE"
+          "contributionLevel": "SECOND_QUARTILE"
         },
         {
           "date": "2026-02-17",
@@ -6476,7 +6526,7 @@ const DATA = {
         {
           "date": "2026-03-27",
           "contributionCount": 9,
-          "contributionLevel": "SECOND_QUARTILE"
+          "contributionLevel": "FIRST_QUARTILE"
         },
         {
           "date": "2026-03-28",
@@ -6485,7 +6535,7 @@ const DATA = {
         },
         {
           "date": "2026-03-29",
-          "contributionCount": 35,
+          "contributionCount": 39,
           "contributionLevel": "FOURTH_QUARTILE"
         },
         {
@@ -8037,6 +8087,7 @@ function renderSummary() {
 
 function render() {
   const el = document.getElementById('content');
+  el.innerHTML = '';
   const years = DATA.years || DATA;
   const syncStatus = document.getElementById('sync-status');
   if (DATA.syncedAt) {
@@ -8143,6 +8194,7 @@ function render() {
 }
 
 const tip = document.getElementById('tip');
+const refreshBtn = document.getElementById('refresh-btn');
 function showTip(e) {
   const c = e.target.dataset.c;
   const dt = new Date(e.target.dataset.d + 'T00:00:00');
@@ -8154,6 +8206,10 @@ function showTip(e) {
   tip.style.top = (r.top - tip.offsetHeight - 8) + 'px';
 }
 function hideTip() { tip.style.display = 'none'; }
+
+refreshBtn.addEventListener('click', () => {
+  window.location.reload();
+});
 
 render();
 </script>
