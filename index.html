@@ -28,6 +28,104 @@
   .header-info h1 { font-size: 22px; font-weight: 600; }
   .header-info p { color: #8b949e; font-size: 14px; margin-top: 2px; }
   .sync-status { color: #6e7681; font-size: 12px; margin-top: 6px; }
+  .panel {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+  .panel h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .panel h2 + .panel-copy { margin-top: 0; }
+  .panel-copy {
+    color: #8b949e;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .stat-card {
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .stat-label {
+    color: #8b949e;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .stat-meta {
+    color: #6e7681;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  .split-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+  }
+  .list-card {
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .list-card h3 {
+    font-size: 13px;
+    color: #e6edf3;
+    margin-bottom: 10px;
+  }
+  .mini-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mini-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+    border-top: 1px solid #21262d;
+    padding-top: 10px;
+  }
+  .mini-item:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .mini-main a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .mini-main a:hover { text-decoration: underline; }
+  .mini-sub {
+    color: #8b949e;
+    font-size: 12px;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .mini-side {
+    color: #6e7681;
+    font-size: 12px;
+    text-align: right;
+    white-space: nowrap;
+  }
 
   .year-section { margin-bottom: 32px; }
   .year-header {
@@ -122,6 +220,7 @@
       <div class="sync-status" id="sync-status"></div>
     </div>
   </div>
+  <div id="summary"></div>
   <div id="content"></div>
   <div class="legend">
     Less
@@ -137,8 +236,323 @@
 <script>
 const DATA = {
   "username": "langerjed",
-  "syncedAt": "2026-03-29T14:51:22.189Z",
-  "years": {
+  "syncedAt": "2026-03-29T15:11:45.323Z",
+  "aggregate": {
+    "scope": "token",
+    "note": "Broader rollup includes repositories and contribution data visible to your token, including private repos when your token and GitHub profile settings allow it.",
+    "repos": {
+      "totalOwned": 18,
+      "publicOwned": 2,
+      "privateOwned": 16,
+      "totalStars": 0,
+      "totalForks": 0,
+      "recent": [
+        {
+          "name": "langerjed/git_hub_heat_map",
+          "url": "https://github.com/langerjed/git_hub_heat_map",
+          "description": "",
+          "pushedAt": "2026-03-29T14:55:27Z",
+          "stars": 0,
+          "forks": 0,
+          "language": "HTML",
+          "visibility": "public",
+          "defaultBranch": "main"
+        },
+        {
+          "name": "langerjed/jedai-website",
+          "url": "https://github.com/langerjed/jedai-website",
+          "description": "JedAI website — Next.js 14, Tailwind, MDX blog",
+          "pushedAt": "2026-03-29T14:46:44Z",
+          "stars": 0,
+          "forks": 0,
+          "language": "TypeScript",
+          "visibility": "private",
+          "defaultBranch": "main"
+        },
+        {
+          "name": "langerjed/web-buddy-app",
+          "url": "https://github.com/langerjed/web-buddy-app",
+          "description": "White-label embeddable AI chat widget powered by OpenAI Responses API",
+          "pushedAt": "2026-03-29T14:43:18Z",
+          "stars": 0,
+          "forks": 0,
+          "language": "JavaScript",
+          "visibility": "private",
+          "defaultBranch": "main"
+        },
+        {
+          "name": "langerjed/general-web-buddy-insights",
+          "url": "https://github.com/langerjed/general-web-buddy-insights",
+          "description": "",
+          "pushedAt": "2026-03-29T14:41:57Z",
+          "stars": 0,
+          "forks": 0,
+          "language": "Python",
+          "visibility": "private",
+          "defaultBranch": "main"
+        },
+        {
+          "name": "langerjed/web-buddy-website",
+          "url": "https://github.com/langerjed/web-buddy-website",
+          "description": "Web Buddy landing page",
+          "pushedAt": "2026-03-29T06:46:50Z",
+          "stars": 0,
+          "forks": 0,
+          "language": "HTML",
+          "visibility": "private",
+          "defaultBranch": "main"
+        },
+        {
+          "name": "langerjed/The-holocron",
+          "url": "https://github.com/langerjed/The-holocron",
+          "description": "",
+          "pushedAt": "2026-03-29T05:04:00Z",
+          "stars": 0,
+          "forks": 0,
+          "language": "TypeScript",
+          "visibility": "private",
+          "defaultBranch": "main"
+        }
+      ]
+    },
+    "pulls": {
+      "opened": 0,
+      "merged": 0
+    },
+    "issues": {
+      "opened": 0
+    },
+    "events": {
+      "totalPublicEvents": 2,
+      "publicPushEvents": 0,
+      "publicPushCommits": 0,
+      "reposTouched": 2,
+      "recentPushes": [],
+      "byType": {
+        "CreateEvent": 2
+      },
+      "note": "Recent activity is based on the public events feed and is limited by GitHub to the latest public events."
+    },
+    "recentCommits": {
+      "totalRecentCommits": 40,
+      "commits": [
+        {
+          "repo": "langerjed/git_hub_heat_map",
+          "url": "https://github.com/langerjed/git_hub_heat_map/commit/f7c6f3cde8ab9dba97040f86885a450142c3a8d0",
+          "message": "Add GitHub heatmap sync",
+          "committedAt": "2026-03-29T14:55:24Z",
+          "sha": "f7c6f3c"
+        },
+        {
+          "repo": "langerjed/jedai-website",
+          "url": "https://github.com/langerjed/jedai-website/commit/58deaf7257b8758e6d68ecbe21f04a46ad1dda6c",
+          "message": "Normalize Web Buddy links and finalize Neon logging",
+          "committedAt": "2026-03-29T14:46:40Z",
+          "sha": "58deaf7"
+        },
+        {
+          "repo": "langerjed/web-buddy-app",
+          "url": "https://github.com/langerjed/web-buddy-app/commit/68caec0f786eb7fdc74bef4f6648c5fca0640ea1",
+          "message": "Add Neon logging and canonical link normalization",
+          "committedAt": "2026-03-29T14:43:15Z",
+          "sha": "68caec0"
+        },
+        {
+          "repo": "langerjed/jedai-website",
+          "url": "https://github.com/langerjed/jedai-website/commit/0225bd0d621d2834387327d60eeb6147efb7199b",
+          "message": "Simplify web buddy recommendation links",
+          "committedAt": "2026-03-29T14:42:18Z",
+          "sha": "0225bd0"
+        },
+        {
+          "repo": "langerjed/general-web-buddy-insights",
+          "url": "https://github.com/langerjed/general-web-buddy-insights/commit/7834da802d7a19b3108a6a0422e302abdc85ff82",
+          "message": "Refresh app UI for WebBuddy insights",
+          "committedAt": "2026-03-29T14:41:54Z",
+          "sha": "7834da8"
+        },
+        {
+          "repo": "langerjed/jedai-website",
+          "url": "https://github.com/langerjed/jedai-website/commit/0f038c0d9e23e1701971c2120de8c838cf6380d5",
+          "message": "Normalize web buddy internal links",
+          "committedAt": "2026-03-29T14:39:20Z",
+          "sha": "0f038c0"
+        },
+        {
+          "repo": "langerjed/general-web-buddy-insights",
+          "url": "https://github.com/langerjed/general-web-buddy-insights/commit/edea10eb339a584dab487e7422bad39c0b3c7bc4",
+          "message": "Wire dashboard to shared WebBuddy database",
+          "committedAt": "2026-03-29T14:35:20Z",
+          "sha": "edea10e"
+        },
+        {
+          "repo": "langerjed/general-web-buddy-insights",
+          "url": "https://github.com/langerjed/general-web-buddy-insights/commit/c455ee25bf14482f61beff9459b9a899a87166af",
+          "message": "Add shared WebBuddy database support",
+          "committedAt": "2026-03-29T14:33:09Z",
+          "sha": "c455ee2"
+        },
+        {
+          "repo": "langerjed/jedai-website",
+          "url": "https://github.com/langerjed/jedai-website/commit/49e1c34d34a542224a84596dcdeb72d321fe0fb8",
+          "message": "Add Neon conversation logging for buddy and agents",
+          "committedAt": "2026-03-29T14:19:36Z",
+          "sha": "49e1c34"
+        },
+        {
+          "repo": "langerjed/jedai-website",
+          "url": "https://github.com/langerjed/jedai-website/commit/028bd3eb2dd5a042f0ac9304c98ef6b004c3e5d6",
+          "message": "Refine Holocron category organization",
+          "committedAt": "2026-03-29T07:40:42Z",
+          "sha": "028bd3e"
+        },
+        {
+          "repo": "langerjed/jedai-website",
+          "url": "https://github.com/langerjed/jedai-website/commit/3fd53cb349f0d0a511fd8d4c0c5d221594373664",
+          "message": "Prefer NASA links for APOD responses",
+          "committedAt": "2026-03-29T07:33:07Z",
+          "sha": "3fd53cb"
+        },
+        {
+          "repo": "langerjed/jedai-website",
+          "url": "https://github.com/langerjed/jedai-website/commit/e28d1055621472aa055cf246bbff98eabcfe5c2d",
+          "message": "Adjust social preview headline",
+          "committedAt": "2026-03-29T07:16:55Z",
+          "sha": "e28d105"
+        }
+      ],
+      "note": "Recent commits are pulled directly from your repositories over the last 14 days."
+    },
+    "contributionSummary": {
+      "years": [
+        2026,
+        2025,
+        2024,
+        2023,
+        2022,
+        2021,
+        2020,
+        2019,
+        2018,
+        2017,
+        2016,
+        2015,
+        2014,
+        2013
+      ],
+      "restrictedCount": 0,
+      "hasRestricted": false,
+      "earliestRestrictedDate": null,
+      "latestRestrictedDate": null,
+      "totals": {
+        "commits": 149,
+        "issues": 0,
+        "pullRequests": 0,
+        "reviews": 0,
+        "repositories": 18
+      },
+      "topContributionRepos": [
+        {
+          "name": "langerjed/toplight-ai-demo",
+          "url": "https://github.com/langerjed/toplight-ai-demo",
+          "commits": 26,
+          "visibility": "private",
+          "stars": 0,
+          "language": "TypeScript"
+        },
+        {
+          "name": "langerjed/Toplight.ai-Lead-Engine",
+          "url": "https://github.com/langerjed/Toplight.ai-Lead-Engine",
+          "commits": 26,
+          "visibility": "private",
+          "stars": 0,
+          "language": "TypeScript"
+        },
+        {
+          "name": "langerjed/mvf1",
+          "url": "https://github.com/langerjed/mvf1",
+          "commits": 20,
+          "visibility": "private",
+          "stars": 0,
+          "language": "Python"
+        },
+        {
+          "name": "langerjed/jedai-website",
+          "url": "https://github.com/langerjed/jedai-website",
+          "commits": 17,
+          "visibility": "private",
+          "stars": 0,
+          "language": "TypeScript"
+        },
+        {
+          "name": "langerjed/web-buddy-website",
+          "url": "https://github.com/langerjed/web-buddy-website",
+          "commits": 14,
+          "visibility": "private",
+          "stars": 0,
+          "language": "HTML"
+        },
+        {
+          "name": "langerjed/general-web-buddy-insights",
+          "url": "https://github.com/langerjed/general-web-buddy-insights",
+          "commits": 8,
+          "visibility": "private",
+          "stars": 0,
+          "language": "Python"
+        },
+        {
+          "name": "langerjed/Macher-Mobile-v2",
+          "url": "https://github.com/langerjed/Macher-Mobile-v2",
+          "commits": 7,
+          "visibility": "private",
+          "stars": 0,
+          "language": "TypeScript"
+        },
+        {
+          "name": "langerjed/Pong-Showcase",
+          "url": "https://github.com/langerjed/Pong-Showcase",
+          "commits": 7,
+          "visibility": "public",
+          "stars": 0,
+          "language": "TypeScript"
+        },
+        {
+          "name": "langerjed/jedai_live",
+          "url": "https://github.com/langerjed/jedai_live",
+          "commits": 7,
+          "visibility": "private",
+          "stars": 0,
+          "language": "TypeScript"
+        },
+        {
+          "name": "langerjed/web-buddy-app",
+          "url": "https://github.com/langerjed/web-buddy-app",
+          "commits": 5,
+          "visibility": "private",
+          "stars": 0,
+          "language": "JavaScript"
+        },
+        {
+          "name": "langerjed/VidaInsights",
+          "url": "https://github.com/langerjed/VidaInsights",
+          "commits": 4,
+          "visibility": "private",
+          "stars": 0,
+          "language": "Python"
+        },
+        {
+          "name": "langerjed/tennis-game-lobby",
+          "url": "https://github.com/langerjed/tennis-game-lobby",
+          "commits": 3,
+          "visibility": "private",
+          "stars": 0,
+          "language": "TypeScript"
+        }
+      ]
+    }
+  },
+  "heatmapMode": "all-commits",
+  "officialYears": {
     "2025": {
       "totalContributions": 3,
       "days": [
@@ -1970,7 +2384,7 @@ const DATA = {
       ]
     },
     "2026": {
-      "totalContributions": 5,
+      "totalContributions": 7,
       "days": [
         {
           "date": "2026-01-01",
@@ -2409,8 +2823,3670 @@ const DATA = {
         },
         {
           "date": "2026-03-29",
+          "contributionCount": 2,
+          "contributionLevel": "FOURTH_QUARTILE"
+        },
+        {
+          "date": "2026-03-30",
           "contributionCount": 0,
           "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-04-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-05-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-06-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-07-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-08-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-09-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-10-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-11-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-12-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        }
+      ]
+    }
+  },
+  "years": {
+    "2025": {
+      "totalContributions": 2,
+      "days": [
+        {
+          "date": "2025-01-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-01-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-02-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-03-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-04-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-05-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-17",
+          "contributionCount": 1,
+          "contributionLevel": "FOURTH_QUARTILE"
+        },
+        {
+          "date": "2025-06-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-19",
+          "contributionCount": 1,
+          "contributionLevel": "FOURTH_QUARTILE"
+        },
+        {
+          "date": "2025-06-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-06-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-07-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-08-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-09-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-10-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-11-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2025-12-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        }
+      ]
+    },
+    "2026": {
+      "totalContributions": 128,
+      "days": [
+        {
+          "date": "2026-01-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-29",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-30",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-01-31",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-06",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-07",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-08",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-10",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-11",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-13",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-14",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-15",
+          "contributionCount": 11,
+          "contributionLevel": "SECOND_QUARTILE"
+        },
+        {
+          "date": "2026-02-16",
+          "contributionCount": 19,
+          "contributionLevel": "THIRD_QUARTILE"
+        },
+        {
+          "date": "2026-02-17",
+          "contributionCount": 4,
+          "contributionLevel": "FIRST_QUARTILE"
+        },
+        {
+          "date": "2026-02-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-21",
+          "contributionCount": 2,
+          "contributionLevel": "FIRST_QUARTILE"
+        },
+        {
+          "date": "2026-02-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-26",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-27",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-02-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-01",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-02",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-03",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-04",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-05",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-06",
+          "contributionCount": 3,
+          "contributionLevel": "FIRST_QUARTILE"
+        },
+        {
+          "date": "2026-03-07",
+          "contributionCount": 2,
+          "contributionLevel": "FIRST_QUARTILE"
+        },
+        {
+          "date": "2026-03-08",
+          "contributionCount": 4,
+          "contributionLevel": "FIRST_QUARTILE"
+        },
+        {
+          "date": "2026-03-09",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-10",
+          "contributionCount": 4,
+          "contributionLevel": "FIRST_QUARTILE"
+        },
+        {
+          "date": "2026-03-11",
+          "contributionCount": 8,
+          "contributionLevel": "FIRST_QUARTILE"
+        },
+        {
+          "date": "2026-03-12",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-13",
+          "contributionCount": 8,
+          "contributionLevel": "FIRST_QUARTILE"
+        },
+        {
+          "date": "2026-03-14",
+          "contributionCount": 12,
+          "contributionLevel": "SECOND_QUARTILE"
+        },
+        {
+          "date": "2026-03-15",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-16",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-17",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-18",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-19",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-20",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-21",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-22",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-23",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-24",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-25",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-26",
+          "contributionCount": 7,
+          "contributionLevel": "FIRST_QUARTILE"
+        },
+        {
+          "date": "2026-03-27",
+          "contributionCount": 9,
+          "contributionLevel": "SECOND_QUARTILE"
+        },
+        {
+          "date": "2026-03-28",
+          "contributionCount": 0,
+          "contributionLevel": "NONE"
+        },
+        {
+          "date": "2026-03-29",
+          "contributionCount": 35,
+          "contributionLevel": "FOURTH_QUARTILE"
         },
         {
           "date": "2026-03-30",
@@ -3805,6 +7881,159 @@ const DATA = {
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const DAYS = ['S','M','T','W','T','F','S'];
 const LEVEL = { NONE: 'l0', FIRST_QUARTILE: 'l1', SECOND_QUARTILE: 'l2', THIRD_QUARTILE: 'l3', FOURTH_QUARTILE: 'l4' };
+const NUMBER = new Intl.NumberFormat('en-US');
+
+function fmtNumber(value) {
+  return NUMBER.format(value || 0);
+}
+
+function fmtDate(value) {
+  return new Date(value).toLocaleString();
+}
+
+function relativeDate(value) {
+  const ms = Date.now() - new Date(value).getTime();
+  const hours = Math.round(ms / 36e5);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.round(hours / 24);
+  return `${days}d ago`;
+}
+
+function renderSummary() {
+  const aggregate = DATA.aggregate;
+  if (!aggregate) return;
+
+  const summary = document.getElementById('summary');
+  const recentRepos = (aggregate.repos && aggregate.repos.recent) || [];
+  const recentPushes = (aggregate.events && aggregate.events.recentPushes) || [];
+  const recentCommits = (aggregate.recentCommits && aggregate.recentCommits.commits) || [];
+  const contributionSummary = aggregate.contributionSummary || null;
+  const contributionRepos = (contributionSummary && contributionSummary.topContributionRepos) || [];
+  const contributionNote = contributionSummary
+    ? (contributionSummary.hasRestricted
+      ? `Includes ${fmtNumber(contributionSummary.restrictedCount)} restricted contribution${contributionSummary.restrictedCount === 1 ? '' : 's'} that GitHub can count without exposing repo details publicly.`
+      : 'Authenticated contribution totals are available for your account.')
+    : 'Token-backed contribution totals are unavailable in this sync.';
+  const heatmapMode = DATA.heatmapMode === 'all-commits'
+    ? 'The heatmap below now shows all commits by day across your repos, not just GitHub profile-counted contributions.'
+    : 'The heatmap below shows GitHub’s official profile contribution calendar.';
+
+  summary.innerHTML = `
+    <section class="panel">
+      <h2>All GitHub Activity</h2>
+      <div class="panel-copy">${aggregate.note}</div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">Owned repos</div>
+          <div class="stat-value">${fmtNumber(aggregate.repos.totalOwned)}</div>
+          <div class="stat-meta">${fmtNumber(aggregate.repos.publicOwned)} public${aggregate.scope === 'token' ? `, ${fmtNumber(aggregate.repos.privateOwned)} private` : ''}</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">PRs opened</div>
+          <div class="stat-value">${fmtNumber(aggregate.pulls.opened)}</div>
+          <div class="stat-meta">${fmtNumber(aggregate.pulls.merged)} merged</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Official commit contributions</div>
+          <div class="stat-value">${fmtNumber(contributionSummary ? contributionSummary.totals.commits : 0)}</div>
+          <div class="stat-meta">${contributionNote}</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Issues opened</div>
+          <div class="stat-value">${fmtNumber(aggregate.issues.opened)}</div>
+          <div class="stat-meta">Across your visible repos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">PR reviews</div>
+          <div class="stat-value">${fmtNumber(contributionSummary ? contributionSummary.totals.reviews : 0)}</div>
+          <div class="stat-meta">${fmtNumber(contributionSummary ? contributionSummary.totals.pullRequests : 0)} official PR contributions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Recent public pushes</div>
+          <div class="stat-value">${fmtNumber(aggregate.events.publicPushEvents)}</div>
+          <div class="stat-meta">${fmtNumber(aggregate.events.publicPushCommits)} commits in recent public push events</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Recent commits</div>
+          <div class="stat-value">${fmtNumber(aggregate.recentCommits.totalRecentCommits)}</div>
+          <div class="stat-meta">${aggregate.recentCommits.note}</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Repos touched recently</div>
+          <div class="stat-value">${fmtNumber(aggregate.events.reposTouched)}</div>
+          <div class="stat-meta">Based on GitHub's public events feed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Stars across owned repos</div>
+          <div class="stat-value">${fmtNumber(aggregate.repos.totalStars)}</div>
+          <div class="stat-meta">${fmtNumber(aggregate.repos.totalForks)} forks</div>
+        </div>
+      </div>
+      <div class="split-grid">
+        <section class="list-card">
+          <h3>Recently Updated Repos</h3>
+          <div class="mini-list">
+            ${recentRepos.map((repo) => `
+              <div class="mini-item">
+                <div class="mini-main">
+                  <a href="${repo.url}" target="_blank" rel="noreferrer">${repo.name}</a>
+                  <div class="mini-sub">${repo.language || 'No language set'} · ${repo.visibility}${repo.description ? ` · ${repo.description}` : ''}</div>
+                </div>
+                <div class="mini-side">${relativeDate(repo.pushedAt)}</div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+        <section class="list-card">
+          <h3>Recent Public Pushes</h3>
+          <div class="mini-list">
+            ${recentPushes.map((push) => `
+              <div class="mini-item">
+                <div class="mini-main">
+                  <a href="${push.url}" target="_blank" rel="noreferrer">${push.repo}</a>
+                  <div class="mini-sub">${push.branch || 'unknown branch'} · ${push.commits} commit${push.commits === 1 ? '' : 's'}</div>
+                </div>
+                <div class="mini-side">${relativeDate(push.createdAt)}</div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+        <section class="list-card">
+          <h3>Recent Commits</h3>
+          <div class="mini-list">
+            ${recentCommits.map((commit) => `
+              <div class="mini-item">
+                <div class="mini-main">
+                  <a href="${commit.url}" target="_blank" rel="noreferrer">${commit.repo}</a>
+                  <div class="mini-sub">${commit.sha} · ${commit.message}</div>
+                </div>
+                <div class="mini-side">${relativeDate(commit.committedAt)}</div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+        <section class="list-card">
+          <h3>Top Contribution Repos</h3>
+          <div class="mini-list">
+            ${contributionRepos.map((repo) => `
+              <div class="mini-item">
+                <div class="mini-main">
+                  <a href="${repo.url}" target="_blank" rel="noreferrer">${repo.name}</a>
+                  <div class="mini-sub">${repo.language || 'No language set'} · ${repo.visibility}</div>
+                </div>
+                <div class="mini-side">${fmtNumber(repo.commits)} commit${repo.commits === 1 ? '' : 's'}</div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Commit Heatmap</h2>
+      <div class="panel-copy">${heatmapMode}</div>
+    </section>
+  `;
+}
 
 function render() {
   const el = document.getElementById('content');
@@ -3816,6 +8045,7 @@ function render() {
   } else {
     syncStatus.textContent = 'Showing saved snapshot';
   }
+  renderSummary();
   // Process each year
   for (const [year, cal] of Object.entries(years).sort((a, b) => b[0] - a[0])) {
     // Flatten all days and group by month
@@ -3851,7 +8081,8 @@ function render() {
 
     const section = document.createElement('div');
     section.className = 'year-section';
-    section.innerHTML = `<div class="year-header"><h2>${year}</h2><div class="count"><span>${cal.totalContributions.toLocaleString()}</span> contributions</div></div>`;
+    const noun = DATA.heatmapMode === 'all-commits' ? 'commits' : 'contributions';
+    section.innerHTML = `<div class="year-header"><h2>${year}</h2><div class="count"><span>${cal.totalContributions.toLocaleString()}</span> ${noun}</div></div>`;
 
     const grid = document.createElement('div');
     grid.className = 'months-grid';
