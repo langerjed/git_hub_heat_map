@@ -7,8 +7,33 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const INDEX_PATH = path.join(__dirname, 'index.html');
+const TIME_ZONE = 'America/New_York';
 const LEVELS = ['NONE', 'FIRST_QUARTILE', 'SECOND_QUARTILE', 'THIRD_QUARTILE', 'FOURTH_QUARTILE'];
 const TOKEN = process.env.GITHUB_TOKEN || '';
+const EASTERN_DAY_FORMATTER = new Intl.DateTimeFormat('en-CA', {
+  timeZone: TIME_ZONE,
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+
+function formatEasternDay(value) {
+  return EASTERN_DAY_FORMATTER.format(new Date(value));
+}
+
+function buildYearDays(year) {
+  const days = [];
+  const cursor = new Date(Date.UTC(year, 0, 1, 12));
+
+  while (true) {
+    const key = formatEasternDay(cursor);
+    if (key > `${year}-12-31`) break;
+    if (key >= `${year}-01-01`) days.push(key);
+    cursor.setUTCDate(cursor.getUTCDate() + 1);
+  }
+
+  return days;
+}
 
 function parseUsername(html) {
   const altMatch = html.match(/<img class="avatar"[^>]*alt="([^"]+)"/i);
@@ -271,7 +296,7 @@ async function fetchCommitHeatmap(username, repos, years) {
       for (const commit of repoCommits) {
         const committedAt = commit.commit?.author?.date || commit.commit?.committer?.date;
         if (!committedAt) continue;
-        const day = committedAt.slice(0, 10);
+        const day = formatEasternDay(committedAt);
         dayCounts.set(day, (dayCounts.get(day) || 0) + 1);
       }
 
@@ -282,14 +307,11 @@ async function fetchCommitHeatmap(username, repos, years) {
   const payload = {};
 
   for (const year of years) {
-    const start = new Date(`${year}-01-01T00:00:00Z`);
-    const end = new Date(`${year}-12-31T00:00:00Z`);
     const days = [];
     let totalContributions = 0;
     let maxCount = 0;
 
-    for (let d = new Date(start); d <= end; d.setUTCDate(d.getUTCDate() + 1)) {
-      const key = d.toISOString().slice(0, 10);
+    for (const key of buildYearDays(year)) {
       const count = dayCounts.get(key) || 0;
       totalContributions += count;
       maxCount = Math.max(maxCount, count);
@@ -433,6 +455,7 @@ async function main() {
   const payload = {
     username,
     syncedAt: new Date().toISOString(),
+    timeZone: TIME_ZONE,
     aggregate,
     heatmapMode: customHeatmap ? 'all-commits' : 'official',
     officialYears: Object.fromEntries(entries),
